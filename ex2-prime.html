@@ -1,0 +1,41 @@
+<!--
+    소수 판별 프로그램
+        사용자가 입력한 숫자가 소수인지 아닌지 알려주는 프로그램을 작성해 봅시다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Prime</title>
+</head>
+<body>
+    <h2>소수 판별 프로그램</h2>
+    <script>
+        var num = Number(prompt("숫자 입력 : "));
+        var isPrime = true;
+        //if(num==1){
+          //  isPrime = true;
+        //}
+        if(num==0){
+            isPrime =false;
+            document.write(n + " 소수가 아님 ( " + i + " 로 나눠짐)");
+        }
+        else{
+            for(var i=2; i<num; i++){
+                if(num % i === 0){
+                    document.write(n + " 소수가 아님 ( " + i + " 로 나눠짐)");
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+        
+        if(isPrime)
+            document.write(num + " 소수가 맞음");
+
+    </script>
+</body>
+</html>
