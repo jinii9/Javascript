@@ -1,0 +1,40 @@
+<!--
+    2. 1에서 100까지 짝수의 합을 구해 봅시다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>예제 2</h2>
+    <script>
+        var i = 1;
+        var sum = 0;
+        
+        while(i <= 100){
+            if(i % 2 == 0){
+                sum += i;
+            }
+            i++;
+            // 이거 빠뜨리지 말기
+        }
+
+        /*
+        for(int i=0; i<=100; i++){
+            if(i % 2 == 0){
+                sum += i;
+                console.log(i, sum);
+            }
+        }
+        */
+
+        alert("1~100까지의 짝수의 합 : " + sum);
+        //document.write("1부터 100까지 짝수의 합은 " + sum + " 입니다");
+    </script>
+</body>
+</html>

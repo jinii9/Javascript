@@ -1,0 +1,28 @@
+<!--
+    1. 사용자가 입력한 수들의 개수와 합을 구하는 프로그램을 작성해 봅시다.
+    (단 0을 입력받으면 입력 종료)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>예제 1</h2>
+    <script>
+        var i = -1;
+        // 처음에 아무 생각 없이 i=0 이라고 지정해서 돌아가지 않음
+        var sum = 0;
+        while(i!=0){
+            i = Number(prompt("수를 입력 : "));
+            // string -> 숫자 바꿔주는거 잊지 말 것
+            sum += i;
+        }
+        alert("입력한 수들의 합 : " + sum);
+    </script>
+</body>
+</html>
