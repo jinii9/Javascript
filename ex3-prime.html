@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제 3</title>
+</head>
+<body>
+    <h2><u>소수 출력하기</u></h2>
+    <p>
+        <ul>
+        <li>1 - 10000 사이의 소수를 화면에 출력하는 프로그램을 작성해 봅시다.</li>
+        <hr width = "100%", color = "blue">
+        </ul>
+    </p>
+
+    <script>
+        // 객체 생성
+        var numbers = {};
+        // 배열 생성
+        numbers.all = [];
+        numbers.prime = [];
+        var count = 0;
+
+
+        // 객체 numbers에 수 넣는 mathod
+        numbers.addAll = function(max_num){
+            for(var i=0; i<=max_num; i++){
+                this.all[i] = i;
+                //this.all.push(i);
+            }
+        }
+
+        // 소수인지 아닌지 판별하는 mathod (true or false return)
+        numbers.isPrime = function(number){
+            for(var i=2; i<number; i++){
+                // 소수가 아닐 경우
+                if(number % i === 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        // prime 배열에 넣는 mathod
+        numbers.addPrime = function(number){
+            this.prime[count] = number;
+            count++;
+        }
+
+        // 출력 mathod
+        numbers.getAllPrimes = function(){
+            for(var i=0; i<this.prime.length; i++){
+                document.write(this.prime[i] + "<br>");
+            }
+        }
+
+
+
+        // 실행
+        numbers.addAll(10000);
+
+        for(var i=2; i<=10000; i++){
+            //소수인 경우
+            if(numbers.isPrime(i))
+                numbers.addPrime(i);
+            //소수가 아닐 경우
+            else
+                continue;
+        }
+
+        numbers.getAllPrimes();
+
+    </script>
+</body>
+</html>
