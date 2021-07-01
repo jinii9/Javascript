@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        gugudan = {};
+        gugudan.dan = -1;
+        gugudan.to = -1;
+        gugudan.results = [];
+
+        gugudan.cal = function(){
+            for(var i=2; i<=this.dan; i++){
+                for(var j=1; j<=this.to; j++){
+                    var n = i*j;
+                    this.results.push(n);
+                }
+            }
+        }
+
+        gugudan.print = function(){
+            document.write("<h2><u>2단부터 " + this.dan + " 단을 " + this.to + " 까지만 계산" + "</u></h2>");
+        
+            var count = 0;
+            for(var i=2; i<=this.dan; i++){
+                document.write("<h3>" + i + "단 출력" + "</h3>");
+                for(var j=1; j<=this.to; j++){
+                    document.write(i + " * " + j + " = " + this.results[count] + "<br>");
+                    count++;      
+                }
+            }
+        }
+
+        function main(){
+            var ans = prompt("원하는 구구단 입력( ex) 8,7 )");
+            var ans_split = ans.split(",");
+            console.log(ans_split);
+            
+            var dan = Number(ans_split[0]);
+            var to = Number(ans_split[1]);
+            console.log(dan + "," + to);
+
+            gugudan.dan = dan;
+            gugudan.to = to;
+            gugudan.cal();
+            gugudan.print();
+        }
+
+        ///////////////////////////////////////////
+        main();
+        
+    </script>
+</body>
+</html>
